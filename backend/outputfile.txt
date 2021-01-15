@@ -1,0 +1,1 @@
+{"errorMessage": "Unrecognized operation \"sdzfgsdfag\"", "errorType": "ValueError", "stackTrace": ["  File \"/var/task/dynamoDB_lambda.py\", line 34, in handler\n    raise ValueError('Unrecognized operation \"{}\"'.format(operation))\n"]}
