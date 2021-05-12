@@ -1,0 +1,56 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Template for definining an AWS lambda function, API-gateway, and dynamoDB
+  table.
+Parameters:
+  TABLENAME:
+    Type: String
+    Description: The DynamoDB table for storing visitor information.
+    Default: SiteCounter
+  REGIONNAME:
+    Type: String
+    Description: Default region for deployment.
+    Default: us-west-2
+  AWSENV:
+    Type: String
+    Description: AWS Environment where code is being executed (REMOTE or LOCAL).
+    Default: REMOTE
+Resources:
+  DynamoDBManager:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: dynamoDB_lambda.handler
+      Runtime: python3.8
+      CodeUri: s3://cloud-resume-bucket/e7197d41c7a16ed5ae7df5eedd48b146
+      Description: An AWS Lambda function to access and modify a dynamoDB.
+      MemorySize: 128
+      Timeout: 300
+      Environment:
+        Variables:
+          TABLE_NAME:
+            Ref: TABLENAME
+          REGION_NAME:
+            Ref: REGIONNAME
+          AWS_ENV:
+            Ref: AWSENV
+      Events:
+        DynamoDBPost:
+          Type: Api
+          Properties:
+            Path: /DynamoDBManager
+            Method: POST
+      Policies:
+      - DynamoDBCrudPolicy:
+          TableName:
+            Ref: TABLENAME
+  Table:
+    Type: AWS::Serverless::SimpleTable
+    Properties:
+      TableName:
+        Ref: TABLENAME
+      PrimaryKey:
+        Name: website
+        Type: String
+      ProvisionedThroughput:
+        ReadCapacityUnits: 2
+        WriteCapacityUnits: 2
