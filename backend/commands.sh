@@ -1,4 +1,11 @@
-# create lambda function
-aws lambda create-function --function-name LambdaFunctionOverHttps \
---zip-file fileb://function.zip --handler dynamoDB_lambda.handler --runtime python3.8 \
---role arn:aws:iam::425411088051:role/lambda-apigateway-role
+# create s3 bucket
+aws s3 mb s3://cloud-resume-bucket
+
+# package cloudformation
+aws cloudformation package --s3-bucket cloud-resume-bucket \
+--template-file template.yaml --output-template-file gen/template-gen.yaml
+
+# deploy
+aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-resume \
+--capabilities CAPABILITY_IAM
+
