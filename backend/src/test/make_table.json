@@ -1,0 +1,13 @@
+{
+    "TableName": "TestTable",
+    "KeySchema": [
+      { "AttributeName": "website", "KeyType": "HASH" }
+    ],
+    "AttributeDefinitions": [
+      { "AttributeName": "website", "AttributeType": "S" }
+    ],
+    "ProvisionedThroughput": {
+      "ReadCapacityUnits": 2,
+      "WriteCapacityUnits": 2
+    }
+}

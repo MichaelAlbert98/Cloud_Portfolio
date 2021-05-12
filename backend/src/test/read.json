@@ -1,0 +1,9 @@
+{
+  "operation": "read",
+  "payload": {
+    "Key": {
+      "website": "michaelalbertportfolio.com"
+    },
+    "ProjectionExpression": "visits"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "operation": "update",
+  "payload": {
+    "Key": {
+      "website": "michaelalbertportfolio.com"
+    },
+    "ReturnValues": "UPDATED_NEW",
+    "UpdateExpression": "set visits = visits + :val",
+    "ExpressionAttributeValues": {
+      ":val": 1
+    }
+  }
+}

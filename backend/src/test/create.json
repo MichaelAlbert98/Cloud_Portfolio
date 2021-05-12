@@ -1,0 +1,9 @@
+{
+    "operation": "create",
+    "payload": {
+        "Item": {
+            "website": "michaelalbertportfolio.com",
+            "visits": 0
+        }
+    }
+}
