@@ -42,7 +42,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: test-locally
     steps:
-      - run: |
+      - name: Package and deploy
+      run: |
           aws cloudformation package --s3-bucket cloud-resume-bucket \
           --template-file template.yaml --output-template-file gen/template-gen.yaml
           aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-resume \
