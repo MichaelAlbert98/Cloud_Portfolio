@@ -1,0 +1,50 @@
+name: backend_actions
+on:
+  push:
+    paths:
+      - 'backend/*'
+      - '!backend/gen/*'
+    branches:
+      - master
+jobs:
+  test-locally:
+    runs-on: ubuntu-latest
+    outputs:
+      test-result: ${{ steps.run-tests.outputs.result }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - uses: aws-actions/setup-sam@v1
+      - uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Setup local DynamoDB
+        run: |
+          docker run -p 8000:8000 amazon/dynamodb-local
+          aws dynamodb create-table --cli-input-json file://backend/src/test/make_table.json --endpoint-url http://localhost:8000
+      - name: start local API Gateway
+        run: sam local start-api --env-vars env.json
+      - id:   run-tests
+      - name: Run tests
+        run: |
+          python backend/src/test_dynamoDB_lambda.py
+          echo "::set-output name=result::$?"
+  update_backend:
+    if: ${{ ${{needs.test-locally.outputs.test-result}} == 0 }}
+    runs-on: ubuntu-latest
+    needs: test-locally
+    steps:
+      - run: |
+          aws cloudformation package --s3-bucket cloud-resume-bucket \
+          --template-file template.yaml --output-template-file gen/template-gen.yaml
+          aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-resume \
+          --capabilities CAPABILITY_IAM
+
