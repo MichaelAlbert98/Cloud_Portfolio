@@ -33,7 +33,7 @@ jobs:
       - name: start local API Gateway
         run: sam local start-api --env-vars env.json
       - id:   run-tests
-      - name: Run tests
+        name: Run tests
         run: |
           python backend/src/test_dynamoDB_lambda.py
           echo "::set-output name=result::$?"
