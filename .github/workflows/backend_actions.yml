@@ -1,5 +1,6 @@
 name: backend_actions
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'backend/*'
