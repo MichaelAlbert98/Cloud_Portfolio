@@ -40,7 +40,7 @@ jobs:
           echo "::set-output name=result::$?"
   update_backend:
     needs: test-locally
-    if: ${{ ${{needs.test-locally.outputs.test-result}} == 0 }}
+    if: ${{ needs.test-locally.outputs.test-result == '0' }}
     runs-on: ubuntu-latest
     steps:
       - name: Package and deploy
