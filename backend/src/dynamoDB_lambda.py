@@ -14,12 +14,13 @@ if aws_env == 'LOCAL':
 else:
     dynamo = boto3.resource('dynamodb', region_name=region_name).Table(table_name)
 
+
 def handler(event, context):
     """Provide an event that contains the following keys:
       - operation: one of the operations in the operations dict below
       - payload: a parameter to pass to the operation being performed
     """
-    #print("Received event: " + json.dumps(event, indent=2))
+    # print("Received event: " + json.dumps(event, indent=2))
     event = json.loads(event["body"])
     operation = event['operation']
     payload = event['payload']
@@ -49,6 +50,6 @@ def handler(event, context):
             traceback.print_exc()
             return {'statusCode': 400, 'body': 'Error in creating item.'}
         else:
-            return {"statusCode": 200, "body": ""}
+            return {"statusCode": 200, "body": "0"}
     else:
         raise ValueError('Unrecognized operation "{}"'.format(operation))
