@@ -29,15 +29,17 @@ jobs:
       - name: Setup local DynamoDB
         run: docker run -p 8000:8000 amazon/dynamodb-local &
       - name: Wait for it to boot up
-        run: python backend/src/wait_for_dynamodb.py
+        run: |
+          cd backend/
+          python src/wait_for_dynamodb.py
       - name: Create table
-        run: aws dynamodb create-table --cli-input-json file://backend/src/test/make_table.json --endpoint-url http://localhost:8000
+        run: aws dynamodb create-table --cli-input-json file://src/test/make_table.json --endpoint-url http://localhost:8000
       - name: start local API Gateway
-        run: sam local start-api --env-vars backend/env.json
+        run: sam local start-api --env-vars env.json
       - id:   run-tests
         name: Run tests
         run: |
-          python backend/src/test_dynamodb_lambda.py
+          python src/test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
   update_backend:
     needs: test-locally
