@@ -28,6 +28,8 @@ jobs:
           pip install -r requirements.txt
       - name: Setup local DynamoDB
         run: docker run -p 8000:8000 amazon/dynamodb-local &
+      - name: Wait for it to boot up
+        run: python backend/src/wait_for_dynamodb
       - name: Create table
         run: aws dynamodb create-table --cli-input-json file://backend/src/test/make_table.json --endpoint-url http://localhost:8000
       - name: start local API Gateway
@@ -35,7 +37,7 @@ jobs:
       - id:   run-tests
         name: Run tests
         run: |
-          python backend/src/test_dynamoDB_lambda.py
+          python backend/src/test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
   update_backend:
     needs: test-locally
