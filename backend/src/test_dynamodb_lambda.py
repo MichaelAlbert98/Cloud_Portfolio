@@ -2,7 +2,7 @@ import requests
 import json
 import unittest
 
-url = "http://localhost:3000/DynamoDBManager"
+url = "http://127.0.0.1:3000/DynamoDBManager"
 
 
 class TestDatabase(unittest.TestCase):
