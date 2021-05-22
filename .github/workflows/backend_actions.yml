@@ -36,7 +36,7 @@ jobs:
       - name: Create table
         run: aws dynamodb create-table --cli-input-json file://src/test/make_table.json --endpoint-url http://localhost:8000
       - name: start local API Gateway
-        run: sam local start-api --env-vars env.json
+        run: sam local start-api --env-vars env.json &
       - id:   run-tests
         name: Run tests
         run: |
