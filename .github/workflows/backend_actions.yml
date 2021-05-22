@@ -40,7 +40,8 @@ jobs:
       - id:   run-tests
         name: Run tests
         run: |
-          python src/test_dynamodb_lambda.py
+          cd src/
+          python test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
   update_backend:
     needs: test-locally
