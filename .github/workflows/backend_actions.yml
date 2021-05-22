@@ -6,6 +6,8 @@ on:
       - 'backend/*'
     branches:
       - master
+defaults:
+  working-directory: backend
 jobs:
   test-locally:
     runs-on: ubuntu-latest
@@ -29,9 +31,7 @@ jobs:
       - name: Setup local DynamoDB
         run: docker run -p 8000:8000 amazon/dynamodb-local &
       - name: Wait for it to boot up
-        run: |
-          cd backend/
-          python src/wait_for_dynamodb.py
+        run: python src/wait_for_dynamodb.py
       - name: Create table
         run: aws dynamodb create-table --cli-input-json file://src/test/make_table.json --endpoint-url http://localhost:8000
       - name: start local API Gateway
