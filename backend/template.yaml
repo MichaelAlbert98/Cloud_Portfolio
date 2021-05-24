@@ -22,7 +22,7 @@ Resources:
   DynamoDBManager:
     Type: 'AWS::Serverless::Function'
     Properties:
-      Handler: dynamoDB_lambda.handler
+      Handler: dynamodb_lambda.handler
       Runtime: python3.8
       CodeUri: src/
       Description: An AWS Lambda function to access and modify a dynamoDB.
