@@ -10,7 +10,7 @@ aws_env = os.environ['AWS_ENV']
 
 # determine if executing locally or on AWS
 if aws_env == 'LOCAL':
-    dynamo = boto3.resource('dynamodb', endpoint_url="http://host.docker.internal:8000").Table(table_name)
+    dynamo = boto3.resource('dynamodb', endpoint_url="http://172.17.0.1:8000").Table(table_name)
 else:
     dynamo = boto3.resource('dynamodb', region_name=region_name).Table(table_name)
 
