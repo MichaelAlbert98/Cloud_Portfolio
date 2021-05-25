@@ -39,11 +39,13 @@ jobs:
       - id:   run-tests
         name: Run tests
         run: |
-          python src/test_dynamodb_lambda.py
+          cd src
+          python test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
       - name: Package and deploy
         if: ${{ steps.run-tests.outputs.result == '0' }}
         run: |
+          cd ..
           mkdir gen
           aws cloudformation package --s3-bucket cloud-portfolio-bucket \
           --template-file template.yaml --output-template-file gen/template-gen.yaml
