@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'backend/**'
+      - '.github/workflows/backend_actions.yml'
     branches:
       - master
 defaults:
@@ -44,6 +45,7 @@ jobs:
       - name: Package and deploy
         if: ${{ steps.run-tests.outputs.result == '0' }}
         run: |
+          mkdir gen
           aws cloudformation package --s3-bucket cloud-portfolio-bucket \
           --template-file template.yaml --output-template-file gen/template-gen.yaml
           aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-portfolio \
