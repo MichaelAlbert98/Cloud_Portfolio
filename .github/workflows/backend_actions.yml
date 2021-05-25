@@ -12,8 +12,6 @@ defaults:
 jobs:
   test-locally:
     runs-on: ubuntu-latest
-    outputs:
-      test-result: ${{ steps.run-tests.outputs.result }}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
@@ -43,15 +41,10 @@ jobs:
           cd src/
           python test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
-  update_backend:
-    needs: test-locally
-    if: ${{ needs.test-locally.outputs.test-result == '0' }}
-    runs-on: ubuntu-latest
-    steps:
       - name: Package and deploy
+        if: ${{ steps.run-tests.outputs.result == '0' }}
         run: |
-          aws cloudformation package --s3-bucket cloud-resume-bucket \
+          aws cloudformation package --s3-bucket cloud-portfolio-bucket \
           --template-file template.yaml --output-template-file gen/template-gen.yaml
-          aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-resume \
+          aws cloudformation deploy --template-file gen/template-gen.yaml --stack-name cloud-formation-portfolio \
           --capabilities CAPABILITY_IAM
-
