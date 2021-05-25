@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r ../requirements.txt
+          pip install -r requirements.txt
       - name: Setup local DynamoDB
         run: docker run --add-host=host.docker.internal:host-gateway -p 8000:8000 amazon/dynamodb-local &
       - name: Wait for it to boot up
@@ -39,8 +39,7 @@ jobs:
       - id:   run-tests
         name: Run tests
         run: |
-          cd src/
-          python test_dynamodb_lambda.py
+          python src/test_dynamodb_lambda.py
           echo "::set-output name=result::$?"
       - name: Package and deploy
         if: ${{ steps.run-tests.outputs.result == '0' }}
