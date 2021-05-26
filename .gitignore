@@ -13,10 +13,6 @@ backend/venv
 
 # frontend
 
-# intellij project
-frontend/.idea/
-frontend/frontend.iml
-
 # dependencies
 frontend/node_modules
 frontend/.pnp
