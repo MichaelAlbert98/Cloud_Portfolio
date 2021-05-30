@@ -12,11 +12,9 @@ export default class Home extends Component {
 									backgroundImage: 'url(images/about.jpg)'
 								}}/>
 							<h1 id="colorlib-logo">
-								<a href="index.html">Jackson Ford</a>
+								<a href="index.html">Michael Albert</a>
 							</h1>
-							<span className="position">
-								<a href="#">UI/UX/Designer</a>
-								in Philippines</span>
+							<span className="position">Software Developer in Washington</span>
 						</div>
 						<nav id="colorlib-main-menu" role="navigation" className="navbar">
 							<div id="navbar" className="collapse">
