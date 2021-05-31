@@ -5,7 +5,7 @@ export default class Home extends Component {
 		return (
 			<div>
 				<div>
-					<a href="#" className="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i/></a>
+					<a href="#navbar" className="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i/></a>
 					<aside id="colorlib-aside" role="complementary" className="border js-fullheight">
 						<div className="text-center">
 							<div className="author-img" style={{
@@ -20,25 +20,16 @@ export default class Home extends Component {
 							<div id="navbar" className="collapse">
 								<ul>
 									<li className="active">
-										<a href="#" data-nav-section="home">Home</a>
+										<a href="#home" data-nav-section="home">Home</a>
 									</li>
 									<li>
-										<a href="#" data-nav-section="about">About</a>
+										<a href="#about" data-nav-section="about">About</a>
 									</li>
 									<li>
-									<a href="#" data-nav-section="education">Education</a>
+									<a href="#experience" data-nav-section="experience">Experience</a>
 									</li>
 									<li>
-									<a href="#" data-nav-section="experience">Experience</a>
-									</li>
-									<li>
-										<a href="#" data-nav-section="services">Services</a>
-									</li>
-									<li>
-										<a href="#" data-nav-section="skills">Skills</a>
-									</li>
-									<li>
-										<a href="#" data-nav-section="work">Work</a>
+										<a href="#skills" data-nav-section="skills">Skills</a>
 									</li>
 								</ul>
 							</div>
