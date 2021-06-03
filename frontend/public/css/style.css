@@ -102,15 +102,14 @@ figure {
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%; }
-  #colorlib-aside .position {
+  #colorlib-aside .email {
     display: block;
-    margin-bottom: 2em;
-    font-size: 12px;
-    text-transform: uppercase; }
+    margin-bottom: .5em;
+    font-size: 12px;}
   #colorlib-aside #colorlib-logo {
     text-align: right;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 30px;
     margin-bottom: .5em;
     display: block;
     width: 100%; }
@@ -380,8 +379,8 @@ body.offcanvas {
 .colorlib-about,
 .colorlib-services,
 .colorlib-contact {
-  padding-top: 4em;
-  padding-bottom: 9em;
+  padding-top: 2em;
+  padding-bottom: 2em;
   clear: both;
   width: 100%;
   display: block; }
@@ -405,7 +404,7 @@ body.offcanvas {
 
 .colorlib-heading {
   font-size: 18px;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 5px;
