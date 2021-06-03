@@ -14,7 +14,7 @@ export default class Home extends Component {
 							<h1 id="colorlib-logo">
 								<a href="index.html">Michael Albert</a>
 							</h1>
-							<span className="position">Software Developer in Washington</span>
+							<span className="email">albertmichael746@gmail.com</span>
 						</div>
 						<nav id="colorlib-main-menu" role="navigation" className="navbar">
 							<div id="navbar" className="collapse">
@@ -34,15 +34,16 @@ export default class Home extends Component {
 								</ul>
 							</div>
 						</nav>
+						<nav id="colorlib-main-menu">
+							<ul>
+								<li><a href="https://www.linkedin.com/in/michael-albert-322a71166/" target="_blank" rel="noopener noreferrer"><i className="icon-linkedin2" /></a>
+								&nbsp; <a href="https://github.com/MichaelAlbert98" target="_blank" rel="noopener noreferrer"><i className="icon-github"></i></a></li>
+							</ul>
+						</nav>
 						<div className="colorlib-footer">
 							<p>
-								<small>© {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */
-									}
-									Copyright © All rights reserved | This template is made with <i className="icon-heart" aria-hidden="true"/> by <a href="https://colorlib.com" target="_blank"> Colorlib</a> {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */
-									}
-									<span>Demo Images:
-										<a href="https://unsplash.com/" target="_blank">Unsplash.com</a>
-									</span>
+								<small>
+									This template is made with <i className="icon-heart" aria-hidden="true"/> and 17 cups of <i className="icon-coffee" aria-hidden="true"/>
 								</small>
 							</p>
 							<ul>
