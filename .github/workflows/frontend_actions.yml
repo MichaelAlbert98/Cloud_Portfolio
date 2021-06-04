@@ -22,10 +22,10 @@ jobs:
       env:
         CI: false
     - name: Upload Artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: build
-          path: build
+      uses: actions/upload-artifact@master
+      with:
+        name: build
+        path: build
   deploy:
     needs: build
     runs-on: ubuntu-latest
