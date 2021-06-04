@@ -20,6 +20,8 @@ jobs:
       run: npm install
     - name: npm build
       run: npm run build
+      env:
+        CI: false
     - name: pwd
       run: |
         pwd
