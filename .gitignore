@@ -21,6 +21,9 @@ frontend/.pnp.js
 # testing
 frontend/coverage
 
+# build
+frontend/build
+
 # misc
 frontend/.DS_Store
 frontend/.env.local
