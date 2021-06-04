@@ -1,6 +1,34 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 export default class Home extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { visits: 0 };
+	}
+
+	componentDidMount() {
+		const api = 'https://yq49lqrt4i.execute-api.us-west-2.amazonaws.com/Prod/DynamoDBManager';
+		const data = { "operation": "update",
+			"payload": {
+				"Key": { "website": "michaelalbertportfolio.com" },
+				"ReturnValues": "UPDATED_NEW",
+				"UpdateExpression": "set visits = visits + :val",
+				"ExpressionAttributeValues": { ":val": 1 }
+			}
+		};
+
+		axios
+			.post(api, data)
+			.then((response) => {
+				console.log(response);
+				this.setState({visits: response.data});
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}
+	
 	render() {
 		return (
 			<div>
@@ -43,7 +71,7 @@ export default class Home extends Component {
 						<div className="colorlib-footer">
 							<p>
 								<small>
-									This template is made with <i className="icon-heart" aria-hidden="true"/> and 17 cups of <i className="icon-coffee" aria-hidden="true"/>
+									This template is made with <i className="icon-heart" aria-hidden="true"/> and {this.state.visits} cups of <i className="icon-coffee" aria-hidden="true"/>
 								</small>
 							</p>
 							<ul>
