@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'frontend/build/**'
+      - 'frontend/'
       - '.github/workflows/frontend_actions.yml'
     branches:
       - master
