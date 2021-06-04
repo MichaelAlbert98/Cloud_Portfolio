@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'frontend/build/**'
+      - '.github/workflows/frontend_actions.yml'
     branches:
       - master
 defaults:
