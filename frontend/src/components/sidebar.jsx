@@ -28,7 +28,7 @@ export default class Home extends Component {
 				console.log(error);
 			});
 	}
-	
+
 	render() {
 		return (
 			<div>
@@ -71,23 +71,9 @@ export default class Home extends Component {
 						<div className="colorlib-footer">
 							<p>
 								<small>
-									This template is made with <i className="icon-heart" aria-hidden="true"/> and {this.state.visits} cups of <i className="icon-coffee" aria-hidden="true"/>
+									This portfolio is made with <i className="icon-heart" aria-hidden="true"/> and {this.state.visits} cups of <i className="icon-coffee" aria-hidden="true"/>
 								</small>
 							</p>
-							<ul>
-								<li>
-									<a href="#"><i className="icon-facebook2"/></a>
-								</li>
-								<li>
-									<a href="#"><i className="icon-twitter2"/></a>
-								</li>
-								<li>
-									<a href="#"><i className="icon-instagram"/></a>
-								</li>
-								<li>
-									<a href="#"><i className="icon-linkedin2"/></a>
-								</li>
-							</ul>
 						</div>
 					</aside>
 				</div>
