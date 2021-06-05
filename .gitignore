@@ -18,6 +18,9 @@ frontend/node_modules
 frontend/.pnp
 frontend/.pnp.js
 
+# deployment
+frontend/build
+
 # testing
 frontend/coverage
 
