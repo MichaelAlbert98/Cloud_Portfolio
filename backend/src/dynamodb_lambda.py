@@ -30,26 +30,62 @@ def handler(event, context):
             response = dynamo.get_item(**payload)
         except ClientError as e:
             print(e.response['Error']['Message'])
-            return {'statusCode': 400, 'body': e.response['Error']['Message']}
+            return {
+                'statusCode': 400,
+                'body': e.response['Error']['Message'],
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
         else:
             item = response['Item']
-            return { "statusCode": 200, "body": str(item['visits']) }
+            return {
+                "statusCode": 200,
+                "body": str(item['visits']),
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
     elif operation == 'update':
         try:
             response = dynamo.update_item(**payload)
         except:
             traceback.print_exc()
-            return {'statusCode': 400, 'body': 'Error in putting item.'}
+            return {
+                'statusCode': 400,
+                'body': 'Error in putting item.',
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
         else:
             item = response['Attributes']
-            return {"statusCode": 200, "body": str(item['visits'])}
+            return {
+                "statusCode": 200,
+                "body": str(item['visits']),
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
     elif operation == 'create':
         try:
             dynamo.put_item(**payload)
         except:
             traceback.print_exc()
-            return {'statusCode': 400, 'body': 'Error in creating item.'}
+            return {
+                'statusCode': 400,
+                'body': 'Error in creating item.',
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
         else:
-            return {"statusCode": 200, "body": "0"}
+            return {
+                "statusCode": 200,
+                "body": "0",
+                'headers': {
+                    'Access-Control-Allow-Origin': '*'
+                }
+            }
     else:
         raise ValueError('Unrecognized operation "{}"'.format(operation))
