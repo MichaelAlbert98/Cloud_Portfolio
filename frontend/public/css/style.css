@@ -631,8 +631,12 @@ body.offcanvas {
     font-family: "Quicksand", Arial, sans-serif;
     font-size: 16px;
     font-weight: 500; }
+  .services.color-1 {
+    border-bottom: 2px solid #a84cb8; }
+    .services.color-1 .icon2 i {
+      color: #ec5453; }
   .services.color-2 {
-    border-bottom: 2px solid #ec5453; }
+    border-bottom: 2px solid #f13e3e; }
     .services.color-2 .icon2 i {
       color: #ec5453; }
   .services.color-3 {
@@ -640,11 +644,11 @@ body.offcanvas {
     .services.color-3 .icon2 i {
       color: #f9bf3f; }
   .services.color-4 {
-    border-bottom: 2px solid #a84cb8; }
+    border-bottom: 2px solid #2c98f0; }
     .services.color-4 .icon2 i {
       color: #a84cb8; }
   .services.color-5 {
-    border-bottom: 2px solid #2fa499; }
+    border-bottom: 2px solid #1c5713; }
   .services.color-6 {
     border-bottom: 2px solid #4054b2; }
 
@@ -684,24 +688,88 @@ body.offcanvas {
       border-style: solid;
       border-width: 30px 50px 0 50px;
       border-color: #2c98f0 transparent transparent transparent; }
-    .services .icon i {
-      font-size: 30px;
-      color: #fff;
-      z-index: 1;
-      display: table-cell;
-      vertical-align: middle; }
+      .services .icon .img1 {
+        background-image: url('/images/skill_java.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img2 {
+        background-image: url('/images/skill_python.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img3 {
+        background-image: url('/images/skill_c.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img4 {
+        background-image: url('/images/skill_matlab.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img5 {
+        background-image: url('/images/skill_git.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img6 {
+        background-image: url('/images/skill_aws.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img7 {
+        background-image: url('/images/skill_latex.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
+      .services .icon .img8 {
+        background-image: url('/images/skill_algorithm.png');
+        background-size: 50px 50px;
+        display: inline-block;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        content:""; }
   .services .desc {
     margin-top: 60px; }
     .services .desc h3 {
       font-size: 16px;
       font-weight: 700;
       text-transform: uppercase; }
+  .services.color-1 .icon {
+    background: #a84cb8; }
+    .services.color-1 .icon:before {
+      border-color: transparent transparent #a84cb8 transparent; }
+    .services.color-1 .icon:after {
+      border-color: #a84cb8 transparent transparent transparent; }
   .services.color-2 .icon {
-    background: #ec5453; }
+    background: #f13e3e; }
     .services.color-2 .icon:before {
-      border-color: transparent transparent #ec5453 transparent; }
+      border-color: transparent transparent #f13e3e transparent; }
     .services.color-2 .icon:after {
-      border-color: #ec5453 transparent transparent transparent; }
+      border-color: #f13e3e transparent transparent transparent; }
   .services.color-3 .icon {
     background: #f9bf3f; }
     .services.color-3 .icon:before {
@@ -709,17 +777,17 @@ body.offcanvas {
     .services.color-3 .icon:after {
       border-color: #f9bf3f transparent transparent transparent; }
   .services.color-4 .icon {
-    background: #a84cb8; }
+    background: #2c98f0; }
     .services.color-4 .icon:before {
-      border-color: transparent transparent #a84cb8 transparent; }
+      border-color: transparent transparent #2c98f0 transparent; }
     .services.color-4 .icon:after {
-      border-color: #a84cb8 transparent transparent transparent; }
+      border-color: #2c98f0 transparent transparent transparent; }
   .services.color-5 .icon {
-    background: #2fa499; }
+    background: #1c5713; }
     .services.color-5 .icon:before {
-      border-color: transparent transparent #2fa499 transparent; }
+      border-color: transparent transparent #1c5713 transparent; }
     .services.color-5 .icon:after {
-      border-color: #2fa499 transparent transparent transparent; }
+      border-color: #1c5713 transparent transparent transparent; }
   .services.color-6 .icon {
     background: #4054b2; }
     .services.color-6 .icon:before {

@@ -16,7 +16,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-1">
 									<span className="icon">
-										<i className="icon-bulb"/>
+										<div className='img1'/>
 									</span>
 									<div className="desc">
 										<h3>Java</h3>
@@ -26,7 +26,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-2">
 									<span className="icon">
-										<i className="icon-data"/>
+										<div className='img2'/>
 									</span>
 									<div className="desc">
 										<h3>Python</h3>
@@ -36,7 +36,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-3">
 									<span className="icon">
-										<i className="icon-phone3"/>
+										<div className='img3'/>
 									</span>
 									<div className="desc">
 										<h3>C</h3>
@@ -46,7 +46,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-4">
 									<span className="icon">
-										<i className="icon-layers2"/>
+										<div className='img4'/>
 									</span>
 									<div className="desc">
 										<h3>MATLAB</h3>
@@ -56,7 +56,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-5">
 									<span className="icon">
-										<i className="icon-data"/>
+										<div className='img5'/>
 									</span>
 									<div className="desc">
 										<h3>Git</h3>
@@ -66,7 +66,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-6">
 									<span className="icon">
-										<i className="icon-phone3"/>
+										<div className='img6'/>
 									</span>
 									<div className="desc">
 										<h3>AWS</h3>
@@ -74,32 +74,22 @@ export default class Home extends Component {
 								</div>
 							</div>
 							<div className="col-md-2 text-center animate-box">
-								<div className="services color-5">
+								<div className="services color-1">
 									<span className="icon">
-										<i className="icon-data"/>
-									</span>
-									<div className="desc">
-										<h3>Dev Ops</h3>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-2 text-center animate-box">
-								<div className="services color-5">
-									<span className="icon">
-										<i className="icon-data"/>
-									</span>
-									<div className="desc">
-										<h3>Algorithms</h3>
-									</div>
-								</div>
-							</div>
-							<div className="col-md-2 text-center animate-box">
-								<div className="services color-5">
-									<span className="icon">
-										<i className="icon-data"/>
+										<div className='img7'/>
 									</span>
 									<div className="desc">
 										<h3>LaTeX</h3>
+									</div>
+								</div>
+							</div>
+							<div className="col-md-2 text-center animate-box">
+								<div className="services color-2">
+									<span className="icon">
+										<div className='img8'/>
+									</span>
+									<div className="desc">
+										<h3>Algorithms</h3>
 									</div>
 								</div>
 							</div>
