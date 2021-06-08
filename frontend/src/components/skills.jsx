@@ -1,4 +1,12 @@
 import React, {Component} from 'react'
+import Java from '../assets/images/skill_java.png'
+import Python from '../assets/images/skill_python.png'
+import C from '../assets/images/skill_c.png'
+import Matlab from '../assets/images/skill_matlab.png'
+import Git from '../assets/images/skill_git.png'
+import Aws from '../assets/images/skill_aws.png'
+import Latex from '../assets/images/skill_latex.png'
+import Algorithm from '../assets/images/skill_algorithm.png'
 
 export default class Home extends Component {
 	render() {
@@ -16,7 +24,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-1">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_java.png)'}}/>
+										<img className='img' src={Java} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>Java</h3>
@@ -26,7 +34,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-2">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_python.png)'}}/>
+										<img className='img' src={Python} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>Python</h3>
@@ -36,7 +44,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-3">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_c.png)'}}/>
+										<img className='img' src={C} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>C</h3>
@@ -46,7 +54,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-4">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_matlab.png)'}}/>
+										<img className='img' src={Matlab} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>MATLAB</h3>
@@ -56,7 +64,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-5">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_git.png)'}}/>
+										<img className='img' src={Git} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>Git</h3>
@@ -66,7 +74,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-6">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_aws.png)'}}/>
+										<img className='img' src={Aws} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>AWS</h3>
@@ -76,7 +84,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-1">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_latex.png)'}}/>
+										<img className='img' src={Latex} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>LaTeX</h3>
@@ -86,7 +94,7 @@ export default class Home extends Component {
 							<div className="col-md-2 text-center animate-box">
 								<div className="services color-2">
 									<span className="icon">
-										<div className='img' style={{backgroundImage: 'url(images/skill_algorithm.png)'}}/>
+										<img className='img' src={Algorithm} alt=""/>
 									</span>
 									<div className="desc">
 										<h3>Algorithms</h3>

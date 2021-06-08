@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Profile from '../assets/images/about.jpg'
 import axios from 'axios'
 
 export default class Home extends Component {
@@ -36,9 +37,7 @@ export default class Home extends Component {
 					<a href="#navbar" className="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i/></a>
 					<aside id="colorlib-aside" role="complementary" className="border js-fullheight">
 						<div className="text-center">
-							<div className="author-img" style={{
-									backgroundImage: 'url(images/about.jpg)'
-								}}/>
+							<img className="author-img" src={Profile} alt=""/>
 							<h1 id="colorlib-logo">
 								<a href="index.html">Michael Albert</a>
 							</h1>
