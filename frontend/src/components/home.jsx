@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import Resume from '../assets/files/resume.pdf'
 
 export default class Home extends Component {
 	render() {
@@ -19,7 +20,7 @@ export default class Home extends Component {
   												<h1>Hey there!
   													<br/>I'm Michael</h1>
   												<p>
-  													<a className="btn btn-primary btn-learn">Download Resume
+  													<a href={Resume} download="Resume.pdf" className="btn btn-primary btn-learn">Download Resume
   														<em className="icon-download4"/></a>
   												</p>
   											</div>
